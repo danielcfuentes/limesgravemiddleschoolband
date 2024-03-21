@@ -104,7 +104,7 @@ def enhance_image_and_add_text(image_path, text):
 
     # Add text to the enhanced image
     draw = ImageDraw.Draw(enhanced_image)
-    font = ImageFont.truetype("arial.ttf", 80)  # Change the font and size as needed
+    font = ImageFont.truetype("Arial", 80)  # Change the font and size as needed
 
     # Get text size
     text_size = draw.textbbox((0, 0), text, font=font)
