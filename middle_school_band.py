@@ -94,48 +94,6 @@ def set_section_background_color(section_color):
     )
 
 # Function to enhance image contrast and add text
-def enhance_image_and_add_text(image_path, text):
-    # Load image
-    image = Image.open(image_path)
-
-    # Enhance image contrast
-    enhancer = ImageEnhance.Contrast(image)
-    enhanced_image = enhancer.enhance(1.5)  # Adjust the enhancement factor as needed
-
-    # Add text to the enhanced image
-    draw = ImageDraw.Draw(enhanced_image)
-    font = ImageFont.truetype("Arial", 80)  # Change the font and size as needed
-
-    # Get text size
-    text_size = draw.textbbox((0, 0), text, font=font)
-
-    # Calculate text position for horizontal and vertical centering
-    text_position = ((enhanced_image.width - text_size[2] - text_size[0]) // 2, (enhanced_image.height - text_size[3] - text_size[1]) // 2)
-
-    # Draw text on the enhanced image
-    draw.text(text_position, text, font=font, fill="white")
-
-    return enhanced_image
-
-# Function to add text to the image with a different text color
-def add_text_to_image(image_path, text, text_color="white"):
-    # Load image
-    image = Image.open(image_path)
-
-    # Add text to the image
-    draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype("Arial", 60)  # Change the font and size as needed
-
-    # Get text size
-    text_size = draw.textbbox((0, 0), text, font=font)
-
-    # Calculate text position for horizontal and vertical centering
-    text_position = ((image.width - text_size[2] - text_size[0]) // 2, (image.height - text_size[3] - text_size[1]) // 2)
-
-    # Draw text on the image with a different color
-    draw.text(text_position, text, font=font, fill=text_color)
-
-    return image
 
 # Sidebar navigation
 page = st.sidebar.selectbox("Navigation", ["Home", "Staff", "Private Lessons", "Teaching Schedule", "Future Members", "Band Calendar", "Resources"])
@@ -146,10 +104,16 @@ if page == "Home":
     text = "Limgrave Middle School Band"
         
     # Add text to the image
-    image_with_text = add_text_to_image(image_path, text)
+    
 
-    # Display the image with added text
-    st.image(image_with_text, use_column_width=True)
+    
+
+    # Centering the title using CSS style
+    st.markdown(
+        "<h1 style='text-align: center;'>Limgrave Middle School Band</h1>", 
+        unsafe_allow_html=True
+    )
+    st.image("band_logo.png", use_column_width=True)
 
     # Excellence, Inspiration, and Experience Section
     set_section_background_color("#b3ffb3")
