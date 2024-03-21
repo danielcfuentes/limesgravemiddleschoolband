@@ -124,7 +124,7 @@ def add_text_to_image(image_path, text, text_color="white"):
 
     # Add text to the image
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype("arial.ttf", 60)  # Change the font and size as needed
+    font = ImageFont.truetype("Arial", 60)  # Change the font and size as needed
 
     # Get text size
     text_size = draw.textbbox((0, 0), text, font=font)
