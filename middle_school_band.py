@@ -133,12 +133,12 @@ if page == "Home":
     # Inspiration
     with col2:
         st.subheader("Inspiration")
-        st.write("We hope to tell a story through our music and marching routines. May it inspire those who witness it and encourage our children who dream of being part of our band one day.")
+        st.write("We hope to tell a story through our music and community. May it inspire those who witness it and encourage our children who dream of being part of our band one day.")
 
     # Experience
     with col3:
         st.subheader("Experience")
-        st.write("Our ultimate goal is to help prepare our students as they get ready for the challenges of college and other obstacles that they face with becoming an adult.")
+        st.write("Our ultimate goal is to help prepare our students as they create music and grow as young adults.")
 
     
     
